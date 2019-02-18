@@ -1,0 +1,46 @@
+int t1;
+int t2;
+int t3;
+
+void setup() {
+  pinMode(13,OUTPUT);
+  pinMode(12,OUTPUT);
+  pinMode(11,OUTPUT);
+
+Serial.begin(9600);
+Serial.println("Tiempo 1");
+while(Serial.available()==0){
+}
+t1 = Serial.parseInt();
+Serial.end();
+
+Serial.begin(9600);
+Serial.println("Tiempo 2");
+while(Serial.available()==0){
+}
+t2 = Serial.parseInt();
+Serial.end();
+
+Serial.begin(9600);
+Serial.println("Tiempo 3");
+while(Serial.available()==0){
+}
+t3 = Serial.parseInt();
+Serial.end();
+}
+
+
+void loop() {
+  digitalWrite(13,HIGH);
+  delay(t1);
+  digitalWrite(13,LOW);
+  delay(t1);
+  digitalWrite(12,HIGH);
+  delay(t2);
+  digitalWrite(12,LOW);
+  delay(t2);
+  digitalWrite(11,HIGH);
+  delay(t3);
+  digitalWrite(11,LOW);
+  delay(t3);
+}
